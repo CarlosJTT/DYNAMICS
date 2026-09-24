@@ -191,6 +191,63 @@
       margin-bottom: 15px;
     }
 
+    /* ===== ACCESO AL SOLUCIONARIO COMO IMAGEN ===== */
+    .solucionario-portada {
+      max-width: 520px;
+      margin: 0 auto;
+      border-radius: 24px;
+      overflow: hidden;
+      cursor: pointer;
+      background: white;
+      box-shadow: 0 12px 35px rgba(123, 31, 162, 0.18);
+      transition: all 0.3s ease;
+      border: 3px solid transparent;
+    }
+
+    .solucionario-portada:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 20px 45px rgba(123, 31, 162, 0.28);
+      border-color: var(--lila);
+    }
+
+    .solucionario-portada img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .solucionario-portada .portada-texto {
+      padding: 18px 20px 20px;
+      text-align: center;
+    }
+
+    .solucionario-portada .portada-texto h4 {
+      color: var(--morado-oscuro);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .modal-solucionarios .modal-content {
+      border: none;
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    .modal-solucionarios .modal-header {
+      background: linear-gradient(135deg, #4a148c, #9c27b0);
+      color: white;
+      border: none;
+    }
+
+    .modal-solucionarios .btn-close {
+      filter: brightness(0) invert(1);
+    }
+
+    .modal-solucionarios .card-documento {
+      border: 1px solid #eee;
+    }
+
     /* ===== WHATSAPP ===== */
     .whatsapp-float {
       position: fixed;
@@ -238,6 +295,31 @@
         margin-top: 50px;
       }
     }
+
+    /* ===== PÁGINA INTERNA DE SOLUCIONARIOS ===== */
+    .solucionario-principal{cursor:pointer;padding:0;overflow:hidden;position:relative}
+    .solucionario-portada{width:100%;height:300px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#4a148c,#7b1fa2,#9c27b0);position:relative}
+    .portada-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;background:linear-gradient(to bottom,rgba(74,20,140,.15),rgba(74,20,140,.72));text-shadow:0 3px 12px rgba(0,0,0,.35)}
+    .portada-overlay i{font-size:4rem;margin-bottom:10px}
+    .portada-overlay h3{font-weight:700;margin:0}
+    .portada-overlay p{margin:8px 0 0}
+    #paginaSolucionarios{display:none;min-height:100vh;background:#faf5fc;padding-bottom:80px}
+    #paginaSolucionarios.activa{display:block}
+    #contenidoPrincipal.oculto{display:none}
+    .barra-solucionarios{position:sticky;top:0;z-index:1000;background:rgba(74,20,140,.98);color:#fff;box-shadow:0 5px 20px rgba(0,0,0,.15)}
+    .barra-solucionarios .container{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+    .btn-volver{border:1px solid rgba(255,255,255,.45);color:#fff;background:rgba(255,255,255,.12);border-radius:12px;padding:10px 17px;font-weight:600;text-decoration:none;transition:.2s}
+    .btn-volver:hover{background:#fff;color:var(--morado)}
+    .solucionarios-titulo{text-align:center;padding:55px 15px 35px}
+    .solucionarios-titulo h1{color:var(--morado-oscuro);font-weight:700;margin-bottom:8px}
+    .solucionarios-titulo p{color:#777}
+    .tarjeta-solucionario{height:100%;background:#fff;border-radius:20px;padding:28px 22px;box-shadow:0 8px 25px rgba(0,0,0,.07);border:1px solid rgba(123,31,162,.08);transition:.25s;text-align:center}
+    .tarjeta-solucionario:hover{transform:translateY(-6px);box-shadow:0 15px 35px rgba(123,31,162,.15)}
+    .tarjeta-solucionario .icono{width:78px;height:78px;margin:0 auto 18px;border-radius:20px;background:linear-gradient(135deg,#f3e5f5,#e1bee7);color:var(--morado);display:flex;align-items:center;justify-content:center;font-size:2.4rem}
+    .tarjeta-solucionario h4{font-weight:700;color:#333}
+    .btn-inicio{position:fixed;right:24px;bottom:24px;width:58px;height:58px;border:none;border-radius:50%;background:var(--morado);color:#fff;box-shadow:0 8px 25px rgba(123,31,162,.35);z-index:1100;display:flex;align-items:center;justify-content:center;font-size:1.45rem;text-decoration:none}
+    .btn-inicio:hover{background:var(--morado-oscuro);color:#fff;transform:scale(1.06)}
+
   </style>
 </head>
 
@@ -316,7 +398,7 @@
   </div>
 
 
-  <div class="container pb-5">
+  <div id="contenidoPrincipal" class="container pb-5">
 
 
     <!-- ===================== MÓDULO I ===================== -->
@@ -388,327 +470,115 @@
 
     <!-- ===================================================== -->
     <!-- ===================== SOLUCIONARIO ================== -->
-    <!-- ===================================================== -->
-
     <div class="modulo-header mt-5">
-
-      <div class="numero"
-           style="background: linear-gradient(135deg, #6a1b9a, #8e24aa);">
-
+      <div class="numero" style="background:linear-gradient(135deg,#6a1b9a,#8e24aa);">
         <i class="bi bi-journal-check"></i>
-
       </div>
-
       <div>
-
-        <h2>
-          Solucionario de Banco de Preguntas
-        </h2>
-
-        <small class="text-muted">
-          Videos grabados y documentos para descargar
-        </small>
-
+        <h2>Solucionario de Banco de Preguntas</h2>
+        <small class="text-muted">Haz clic en la imagen para abrir todos los solucionarios</small>
       </div>
-
     </div>
 
-
-    <div class="row g-4">
-
-
-      <!-- ================================================= -->
-      <!-- SOLUCIONARIO 1 - PREGUNTAS 1 A 98 -->
-      <!-- ================================================= -->
-
-      <div class="col-md-4">
-
-        <div class="card-documento">
-
-          <div class="icono-doc">
-            <i class="bi bi-journal-check"></i>
-          </div>
-
-          <h5 class="fw-semibold">
-            Solucionario Módulo I
-          </h5>
-
-          <p class="text-muted small mb-3">
-            Banco de preguntas resuelto 1 - 98
-          </p>
-
-
-          <!-- VIDEO -->
-          <a href="https://drive.google.com/file/d/1euvUqeEMlcQTDeEeiNeBK29VSyChwECY/view?usp=drive_link"
-             class="btn btn-clase mb-2"
-             target="_blank">
-
-            <i class="bi bi-play-circle-fill me-2"></i>
-            Ver Video
-
-          </a>
-
-
-          <!-- PDF -->
-          <a href="https://drive.google.com/file/d/1-ANvKojWqnAyhzd80ZsulXVen_Z9JOpi/view?usp=drive_link"
-             class="btn btn-clase"
-             target="_blank">
-
-            <i class="bi bi-file-earmark-pdf-fill me-2"></i>
-            Descargar PDF
-
-          </a>
-
+    <!-- PORTADA CLICKEABLE -->
+    <div class="card-documento solucionario-principal"
+         onclick="abrirPaginaSolucionarios()"
+         role="button" tabindex="0"
+         onkeydown="if(event.key==='Enter'||event.key===' ')abrirPaginaSolucionarios();">
+      <div class="solucionario-portada">
+        <div class="portada-overlay">
+          <i class="bi bi-journal-bookmark-fill"></i>
+          <h3>Banco de Solucionarios</h3>
+          <p>Haz clic aquí para entrar</p>
         </div>
-
       </div>
-
-
-
-      <!-- ================================================= -->
-      <!-- SOLUCIONARIO 2 - PREGUNTAS 98 A 198 -->
-      <!-- ================================================= -->
-
-      <div class="col-md-4">
-
-        <div class="card-documento">
-
-          <div class="icono-doc">
-            <i class="bi bi-journal-check"></i>
-          </div>
-
-          <h5 class="fw-semibold">
-            Solucionario Módulo II
-          </h5>
-
-          <p class="text-muted small mb-3">
-            Banco de preguntas resuelto 98 - 198
-          </p>
-
-
-          <!-- VIDEO -->
-          <a href="https://drive.google.com/file/d/1MP0NgHLKJ2_hUcTCLB1Uu07UdMVQWMly/view?usp=drive_link"
-             class="btn btn-clase mb-2"
-             target="_blank">
-
-            <i class="bi bi-play-circle-fill me-2"></i>
-            Ver Video
-
-          </a>
-
-
-          <!-- PDF -->
-          <a href="https://drive.google.com/file/d/1WciD7RucIG1o88zaP-qgE5C85Td3p26Z/view?usp=drive_link"
-             class="btn btn-clase"
-             target="_blank">
-
-            <i class="bi bi-file-earmark-pdf-fill me-2"></i>
-            Descargar PDF
-
-          </a>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- ================================================= -->
-      <!-- SOLUCIONARIO 3 - PREGUNTAS 99 A 230 -->
-      <!-- ================================================= -->
-
-      <div class="col-md-4">
-
-        <div class="card-documento">
-
-          <div class="icono-doc">
-            <i class="bi bi-journal-check"></i>
-          </div>
-
-          <h5 class="fw-semibold">
-            Solucionario Módulo III
-          </h5>
-
-          <p class="text-muted small mb-3">
-            Banco de preguntas resuelto 99 - 230
-          </p>
-
-
-          <!-- VIDEO -->
-          <a href="https://drive.google.com/file/d/1h7EbrK4dSQgVHWeWqmH1hQ0kPrnz0yO1/view?usp=drive_link"
-             class="btn btn-clase mb-2"
-             target="_blank">
-
-            <i class="bi bi-play-circle-fill me-2"></i>
-            Ver Video
-
-          </a>
-
-
-          <!-- PDF -->
-          <a href="https://drive.google.com/file/d/1KIDScCNHpbK2kWCLCFQ5ay-qDa7WcNVF/view?usp=drive_link"
-             class="btn btn-clase"
-             target="_blank">
-
-            <i class="bi bi-file-earmark-pdf-fill me-2"></i>
-            Descargar PDF
-
-          </a>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- ================================================= -->
-      <!-- NUEVO SOLUCIONARIO 4 - PREGUNTAS 230 A 250 -->
-      <!-- ================================================= -->
-
-      <div class="col-md-4">
-
-        <div class="card-documento">
-
-          <div class="icono-doc">
-            <i class="bi bi-journal-check"></i>
-          </div>
-
-          <h5 class="fw-semibold">
-            Solucionario 230 - 250
-          </h5>
-
-          <p class="text-muted small mb-3">
-            Banco de preguntas resuelto 230 - 250
-          </p>
-
-
-          <!-- VIDEO -->
-          <a href="https://drive.google.com/file/d/19vKEFb1do93PJmDd7TjnhULNDr6hB1ew/view?usp=drive_link"
-             class="btn btn-clase mb-2"
-             target="_blank">
-
-            <i class="bi bi-play-circle-fill me-2"></i>
-            Ver Video
-
-          </a>
-
-
-          <!-- PDF -->
-          <a href="https://drive.google.com/file/d/1EZUSGHWKU_9rJCisWfOFQScAwkCAKKN0/view?usp=drive_link"
-             class="btn btn-clase"
-             target="_blank">
-
-            <i class="bi bi-file-earmark-pdf-fill me-2"></i>
-            Descargar PDF
-
-          </a>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- ================================================= -->
-      <!-- NUEVO SOLUCIONARIO 5 - PREGUNTAS 250 A 265 -->
-      <!-- ================================================= -->
-
-      <div class="col-md-4">
-
-        <div class="card-documento">
-
-          <div class="icono-doc">
-            <i class="bi bi-journal-check"></i>
-          </div>
-
-          <h5 class="fw-semibold">
-            Solucionario 250 - 265
-          </h5>
-
-          <p class="text-muted small mb-3">
-            Banco de preguntas resuelto 250 - 265
-          </p>
-
-
-          <!-- VIDEO -->
-          <a href="https://drive.google.com/file/d/1wZhEmivaPQopTkxjx35XBDWOnkuaFVzb/view?usp=drive_link"
-             class="btn btn-clase mb-2"
-             target="_blank">
-
-            <i class="bi bi-play-circle-fill me-2"></i>
-            Ver Video
-
-          </a>
-
-
-          <!-- PDF -->
-          <a href="https://drive.google.com/file/d/19Nt_MRANLCvmC28AP_l8mvPGIgsKFMTN/view?usp=drive_link"
-             class="btn btn-clase"
-             target="_blank">
-
-            <i class="bi bi-file-earmark-pdf-fill me-2"></i>
-            Descargar PDF
-
-          </a>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- ================================================= -->
-      <!-- NUEVO SOLUCIONARIO 6 - PREGUNTAS 266 A 300 -->
-      <!-- ================================================= -->
-
-      <div class="col-md-4">
-
-        <div class="card-documento">
-
-          <div class="icono-doc">
-            <i class="bi bi-journal-check"></i>
-          </div>
-
-          <h5 class="fw-semibold">
-            Solucionario 266 - 300
-          </h5>
-
-          <p class="text-muted small mb-3">
-            Banco de preguntas resuelto 266 - 300
-          </p>
-
-
-          <!-- VIDEO -->
-          <a href="https://drive.google.com/file/d/1BFdbCkz7ubLp6yDchncGYpN9mxn6ykrM/view?usp=drive_link"
-             class="btn btn-clase mb-2"
-             target="_blank">
-
-            <i class="bi bi-play-circle-fill me-2"></i>
-            Ver Video
-
-          </a>
-
-
-          <!-- PDF -->
-          <a href="https://drive.google.com/file/d/143xK-PCmZFOdvxkLApYx4kfGvx1SXm-7/view?usp=drive_link"
-             class="btn btn-clase"
-             target="_blank">
-
-            <i class="bi bi-file-earmark-pdf-fill me-2"></i>
-            Descargar PDF
-
-          </a>
-
-        </div>
-
-      </div>
-
-
     </div>
-    <!-- FIN ROW SOLUCIONARIO -->
 
   </div>
   <!-- FIN CONTAINER -->
+
+  <!-- ===================================================== -->
+  <!-- PÁGINA INTERNA DE SOLUCIONARIOS                       -->
+  <!-- ===================================================== -->
+  <div id="paginaSolucionarios">
+
+    <div class="barra-solucionarios">
+      <div class="container">
+        <a href="#" class="btn-volver" onclick="cerrarPaginaSolucionarios();return false;">
+          <i class="bi bi-arrow-left me-2"></i> Atrás
+        </a>
+        <div class="fw-bold"><i class="bi bi-journal-check me-2"></i>SOLUCIONARIOS</div>
+        <a href="#" class="btn-volver" onclick="volverAlInicio();return false;">
+          <i class="bi bi-house-fill me-2"></i> Inicio
+        </a>
+      </div>
+    </div>
+
+    <div class="solucionarios-titulo">
+      <h1>Banco de Solucionarios</h1>
+      <p>Selecciona el material que deseas consultar</p>
+    </div>
+
+    <div class="container">
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4"><div class="tarjeta-solucionario">
+          <div class="icono"><i class="bi bi-journal-check"></i></div>
+          <h4>Solucionario Módulo I</h4>
+          <p class="text-muted small mb-4">Banco de preguntas resuelto 1 - 98</p>
+          <a href="https://drive.google.com/file/d/1euvUqeEMlcQTDeEeiNeBK29VSyChwECY/view?usp=drive_link" class="btn btn-clase w-100 mb-2" target="_blank"><i class="bi bi-play-circle-fill me-2"></i>Ver Video</a>
+          <a href="https://drive.google.com/file/d/1-ANvKojWqnAyhzd80ZsulXVen_Z9JOpi/view?usp=drive_link" class="btn btn-clase w-100" target="_blank"><i class="bi bi-file-earmark-pdf-fill me-2"></i>Descargar PDF</a>
+        </div></div>
+
+        <div class="col-md-6 col-lg-4"><div class="tarjeta-solucionario">
+          <div class="icono"><i class="bi bi-journal-check"></i></div>
+          <h4>Solucionario Módulo II</h4>
+          <p class="text-muted small mb-4">Banco de preguntas resuelto 98 - 198</p>
+          <a href="https://drive.google.com/file/d/1MP0NgHLKJ2_hUcTCLB1Uu07UdMVQWMly/view?usp=drive_link" class="btn btn-clase w-100 mb-2" target="_blank"><i class="bi bi-play-circle-fill me-2"></i>Ver Video</a>
+          <a href="https://drive.google.com/file/d/1WciD7RucIG1o88zaP-qgE5C85Td3p26Z/view?usp=drive_link" class="btn btn-clase w-100" target="_blank"><i class="bi bi-file-earmark-pdf-fill me-2"></i>Descargar PDF</a>
+        </div></div>
+
+        <div class="col-md-6 col-lg-4"><div class="tarjeta-solucionario">
+          <div class="icono"><i class="bi bi-journal-check"></i></div>
+          <h4>Solucionario Módulo III</h4>
+          <p class="text-muted small mb-4">Banco de preguntas resuelto 99 - 230</p>
+          <a href="https://drive.google.com/file/d/1h7EbrK4dSQgVHWeWqmH1hQ0kPrnz0yO1/view?usp=drive_link" class="btn btn-clase w-100 mb-2" target="_blank"><i class="bi bi-play-circle-fill me-2"></i>Ver Video</a>
+          <a href="https://drive.google.com/file/d/1KIDScCNHpbK2kWCLCFQ5ay-qDa7WcNVF/view?usp=drive_link" class="btn btn-clase w-100" target="_blank"><i class="bi bi-file-earmark-pdf-fill me-2"></i>Descargar PDF</a>
+        </div></div>
+
+        <div class="col-md-6 col-lg-4"><div class="tarjeta-solucionario">
+          <div class="icono"><i class="bi bi-journal-check"></i></div>
+          <h4>Solucionario 230 - 250</h4>
+          <p class="text-muted small mb-4">Banco de preguntas resuelto 230 - 250</p>
+          <a href="https://drive.google.com/file/d/19vKEFb1do93PJmDd7TjnhULNDr6hB1ew/view?usp=drive_link" class="btn btn-clase w-100 mb-2" target="_blank"><i class="bi bi-play-circle-fill me-2"></i>Ver Video</a>
+          <a href="https://drive.google.com/file/d/1EZUSGHWKU_9rJCisWfOFQScAwkCAKKN0/view?usp=drive_link" class="btn btn-clase w-100" target="_blank"><i class="bi bi-file-earmark-pdf-fill me-2"></i>Descargar PDF</a>
+        </div></div>
+
+        <div class="col-md-6 col-lg-4"><div class="tarjeta-solucionario">
+          <div class="icono"><i class="bi bi-journal-check"></i></div>
+          <h4>Solucionario 250 - 265</h4>
+          <p class="text-muted small mb-4">Banco de preguntas resuelto 250 - 265</p>
+          <a href="https://drive.google.com/file/d/1wZhEmivaPQopTkxjx35XBDWOnkuaFVzb/view?usp=drive_link" class="btn btn-clase w-100 mb-2" target="_blank"><i class="bi bi-play-circle-fill me-2"></i>Ver Video</a>
+          <a href="https://drive.google.com/file/d/19Nt_MRANLCvmC28AP_l8mvPGIgsKFMTN/view?usp=drive_link" class="btn btn-clase w-100" target="_blank"><i class="bi bi-file-earmark-pdf-fill me-2"></i>Descargar PDF</a>
+        </div></div>
+
+        <div class="col-md-6 col-lg-4"><div class="tarjeta-solucionario">
+          <div class="icono"><i class="bi bi-journal-check"></i></div>
+          <h4>Solucionario 266 - 300</h4>
+          <p class="text-muted small mb-4">Banco de preguntas resuelto 266 - 300</p>
+          <a href="https://drive.google.com/file/d/1BFdbCkz7ubLp6yDchncGYpN9mxn6ykrM/view?usp=drive_link" class="btn btn-clase w-100 mb-2" target="_blank"><i class="bi bi-play-circle-fill me-2"></i>Ver Video</a>
+          <a href="https://drive.google.com/file/d/143xK-PCmZFOdvxkLApYx4kfGvx1SXm-7/view?usp=drive_link" class="btn btn-clase w-100" target="_blank"><i class="bi bi-file-earmark-pdf-fill me-2"></i>Descargar PDF</a>
+        </div></div>
+
+      </div>
+    </div>
+
+    <a href="#" class="btn-inicio" title="Volver al principio" onclick="volverAlInicio();return false;">
+      <i class="bi bi-house-fill"></i>
+    </a>
+  </div>
+
+
 
 
   <!-- ===================== WHATSAPP ===================== -->
@@ -749,6 +619,32 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <script>
+    function abrirPaginaSolucionarios(){
+      document.getElementById('contenidoPrincipal').classList.add('oculto');
+      document.getElementById('paginaSolucionarios').classList.add('activa');
+      window.scrollTo(0,0);
+      history.pushState({solucionarios:true},'', '#solucionarios');
+    }
+
+    function cerrarPaginaSolucionarios(){
+      document.getElementById('paginaSolucionarios').classList.remove('activa');
+      document.getElementById('contenidoPrincipal').classList.remove('oculto');
+      history.replaceState(null,'',window.location.pathname+window.location.search);
+      window.scrollTo(0,0);
+    }
+
+    function volverAlInicio(){
+      document.getElementById('paginaSolucionarios').classList.remove('activa');
+      document.getElementById('contenidoPrincipal').classList.remove('oculto');
+      history.replaceState(null,'',window.location.pathname+window.location.search);
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+
+    window.addEventListener('popstate',function(){ cerrarPaginaSolucionarios(); });
+  </script>
 
 </body>
 </html>
