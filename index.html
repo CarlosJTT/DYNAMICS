@@ -1,36 +1,38 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Curso Virtual ESFM - Agosto</title>
-  
+  <title>DYNAMICS - Razonamiento Matemático</title>
+
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Iconos -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <!-- Fuente más bonita -->
+  <!-- Fuente moderna -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --azul-principal: #1a73e8;
-      --azul-oscuro: #0d47a1;
-      --verde: #00c853;
-      --fondo: #f0f4f8;
+      --morado-oscuro: #4a148c;
+      --morado: #7b1fa2;
+      --lila: #9c27b0;
+      --lila-claro: #e1bee7;
+      --lila-suave: #f3e5f5;
+      --whatsapp: #25D366;
     }
 
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: var(--fondo);
+      background-color: #faf5fc;
       color: #333;
     }
 
     /* ===== HERO ===== */
     .hero {
-      background: linear-gradient(135deg, #0d47a1, #1a73e8);
+      background: linear-gradient(135deg, #4a148c, #7b1fa2, #9c27b0);
       color: white;
-      padding: 80px 0 60px;
+      padding: 90px 0 70px;
       position: relative;
       overflow: hidden;
     }
@@ -38,150 +40,160 @@
     .hero::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       background: url('https://www.transparenttextures.com/patterns/cubes.png');
-      opacity: 0.1;
+      opacity: 0.08;
     }
 
     .hero h1 {
       font-weight: 700;
-      font-size: 2.8rem;
+      font-size: 3rem;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
 
     .hero .badge-custom {
       background: rgba(255,255,255,0.2);
-      padding: 8px 18px;
+      backdrop-filter: blur(8px);
+      padding: 8px 20px;
       border-radius: 50px;
       font-size: 0.95rem;
     }
 
     /* ===== NAVEGACIÓN RÁPIDA ===== */
-    .nav-rapida {
+    .nav-modulos {
       background: white;
-      border-radius: 16px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-      margin-top: -40px;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(123, 31, 162, 0.12);
+      margin-top: -45px;
       position: relative;
-      z-index: 10;
+      z-index: 20;
     }
 
-    .nav-rapida a {
+    .nav-modulos a {
       text-decoration: none;
       color: #555;
       font-weight: 500;
-      padding: 18px 10px;
+      padding: 20px 10px;
       display: block;
       transition: all 0.3s;
-      border-radius: 12px;
+      border-radius: 14px;
     }
 
-    .nav-rapida a:hover {
-      background: #e3f2fd;
-      color: var(--azul-principal);
+    .nav-modulos a:hover {
+      background: var(--lila-suave);
+      color: var(--morado);
     }
 
-    /* ===== TÍTULOS DE SECCIÓN ===== */
-    .section-header {
+    /* ===== TÍTULOS DE MÓDULO ===== */
+    .modulo-header {
       display: flex;
       align-items: center;
-      gap: 15px;
-      margin: 60px 0 30px;
+      gap: 18px;
+      margin: 70px 0 30px;
     }
 
-    .section-header .icono {
-      width: 55px;
-      height: 55px;
-      background: var(--azul-principal);
+    .modulo-header .numero {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--morado), var(--lila));
       color: white;
-      border-radius: 14px;
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.6rem;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(123, 31, 162, 0.3);
     }
 
-    .section-header h2 {
+    .modulo-header h2 {
       font-weight: 700;
-      color: var(--azul-oscuro);
+      color: var(--morado-oscuro);
       margin: 0;
     }
 
-    /* ===== TARJETAS ===== */
-    .card-curso {
+    /* ===== TARJETAS DE CLASES ===== */
+    .card-clase {
       border: none;
       border-radius: 18px;
       overflow: hidden;
-      transition: all 0.3s ease;
       background: white;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+      transition: all 0.3s ease;
       height: 100%;
     }
 
-    .card-curso:hover {
+    .card-clase:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+      box-shadow: 0 18px 40px rgba(123, 31, 162, 0.15);
     }
 
-    .card-curso .img-container {
-      height: 180px;
-      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    .card-clase .img-icon {
+      height: 160px;
+      background: linear-gradient(135deg, #f3e5f5, #e1bee7);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 4rem;
-      color: var(--azul-principal);
+      font-size: 3.8rem;
+      color: var(--morado);
     }
 
-    .card-curso .card-body {
+    .card-clase .card-body {
       padding: 22px;
     }
 
-    .card-curso h5 {
+    .card-clase h5 {
       font-weight: 600;
-      color: #222;
-      margin-bottom: 8px;
+      color: #333;
+      margin-bottom: 6px;
     }
 
-    .btn-ver {
-      background: var(--azul-principal);
+    .btn-clase {
+      background: linear-gradient(135deg, var(--morado), var(--lila));
       color: white;
       border: none;
-      border-radius: 10px;
-      padding: 10px 20px;
+      border-radius: 12px;
+      padding: 11px 20px;
       font-weight: 500;
       width: 100%;
       transition: all 0.3s;
     }
 
-    .btn-ver:hover {
-      background: var(--azul-oscuro);
+    .btn-clase:hover {
+      background: linear-gradient(135deg, var(--morado-oscuro), var(--morado));
       color: white;
+      transform: scale(1.02);
     }
 
-    /* ===== MATERIAL ADICIONAL ===== */
-    .card-material {
+    /* ===== SOLUCIONARIO ===== */
+    .card-documento {
       border: none;
       border-radius: 18px;
       background: white;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
       transition: all 0.3s;
       height: 100%;
+      text-align: center;
+      padding: 30px 20px;
     }
 
-    .card-material:hover {
+    .card-documento:hover {
       transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 15px 35px rgba(123, 31, 162, 0.12);
     }
 
-    /* ===== WHATSAPP FLOTANTE ===== */
+    .card-documento .icono-doc {
+      font-size: 3.2rem;
+      color: var(--morado);
+      margin-bottom: 15px;
+    }
+
+    /* ===== WHATSAPP ===== */
     .whatsapp-float {
       position: fixed;
       bottom: 25px;
       right: 25px;
-      background: #25D366;
+      background: var(--whatsapp);
       color: white;
       width: 62px;
       height: 62px;
@@ -203,54 +215,48 @@
 
     /* ===== FOOTER ===== */
     footer {
-      background: var(--azul-oscuro);
+      background: linear-gradient(135deg, #4a148c, #6a1b9a);
       color: white;
       padding: 40px 0;
-      margin-top: 80px;
+      margin-top: 90px;
     }
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
+  <!-- ===================== HERO ===================== -->
   <section class="hero text-center">
     <div class="container position-relative">
       <span class="badge-custom mb-3 d-inline-block">
-        <i class="bi bi-mortarboard-fill me-2"></i> Preparación 2025
+        <i class="bi bi-mortarboard-fill me-2"></i> Instituto DYNAMICS
       </span>
-      <h1 class="mb-3">Curso Virtual ESFM</h1>
-      <p class="lead mb-4 opacity-90">Preparación completa para Policiales • Militares • ESFM • UAS</p>
-      <a href="https://wa.me/59177539933" class="btn btn-light btn-lg px-4 fw-semibold" target="_blank">
-        <i class="bi bi-whatsapp me-2"></i> Contáctanos por WhatsApp
+      <h1 class="mb-3">Clases de Razonamiento Matemático</h1>
+      <p class="lead mb-4 opacity-90">Módulos organizados • Clases grabadas • Material de apoyo</p>
+      <a href="https://wa.me/59177539933" class="btn btn-light btn-lg px-5 fw-semibold" target="_blank">
+        <i class="bi bi-whatsapp me-2"></i> Contáctanos
       </a>
     </div>
   </section>
 
   <!-- NAVEGACIÓN RÁPIDA -->
   <div class="container">
-    <div class="nav-rapida row text-center g-0">
-      <div class="col-6 col-md-3">
-        <a href="#junio">
-          <i class="bi bi-calendar-month d-block mb-1 fs-4 text-primary"></i>
-          Junio
+    <div class="nav-modulos row text-center g-0">
+      <div class="col-4">
+        <a href="#modulo1">
+          <i class="bi bi-1-circle-fill d-block mb-1 fs-3" style="color:#7b1fa2;"></i>
+          Módulo I
         </a>
       </div>
-      <div class="col-6 col-md-3">
-        <a href="#julio">
-          <i class="bi bi-calendar-month d-block mb-1 fs-4 text-primary"></i>
-          Julio
+      <div class="col-4">
+        <a href="#modulo2">
+          <i class="bi bi-2-circle-fill d-block mb-1 fs-3" style="color:#7b1fa2;"></i>
+          Módulo II
         </a>
       </div>
-      <div class="col-6 col-md-3">
-        <a href="#agosto">
-          <i class="bi bi-calendar-month d-block mb-1 fs-4 text-primary"></i>
-          Agosto
-        </a>
-      </div>
-      <div class="col-6 col-md-3">
-        <a href="#material">
-          <i class="bi bi-journal-bookmark d-block mb-1 fs-4 text-primary"></i>
-          Material Extra
+      <div class="col-4">
+        <a href="#modulo3">
+          <i class="bi bi-3-circle-fill d-block mb-1 fs-3" style="color:#7b1fa2;"></i>
+          Módulo III
         </a>
       </div>
     </div>
@@ -258,238 +264,241 @@
 
   <div class="container pb-5">
 
-    <!-- ===================== JUNIO ===================== -->
-    <div id="junio" class="section-header">
-      <div class="icono"><i class="bi bi-camera-reels"></i></div>
+    <!-- ===================== MÓDULO I ===================== -->
+    <div id="modulo1" class="modulo-header">
+      <div class="numero">I</div>
       <div>
-        <h2>Videos de Clase - JUNIO</h2>
-        <small class="text-muted">Grabaciones disponibles</small>
+        <h2>Módulo I</h2>
+        <small class="text-muted">Clases grabadas de Razonamiento Matemático</small>
       </div>
     </div>
 
     <div class="row g-4">
-      <div class="col-md-3 col-sm-6">
-        <div class="card-curso">
-          <div class="img-container">
-            <i class="bi bi-calculator"></i>
+      <!-- Clase 1 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card-clase">
+          <div class="img-icon">
+            <i class="bi bi-play-circle"></i>
           </div>
           <div class="card-body">
-            <h5>Razonamiento Lógico Matemático</h5>
-            <p class="text-muted small mb-3">Clases grabadas de junio</p>
-            <a href="PON_AQUI_EL_ENLACE" class="btn btn-ver" target="_blank">Ver videos</a>
+            <h5>Clase 1 - Introducción</h5>
+            <p class="text-muted small mb-3">Razonamiento Lógico Matemático</p>
+            <a href="PON_AQUI_EL_ENLACE_DE_DRIVE" class="btn btn-clase" target="_blank">
+              <i class="bi bi-camera-reels me-2"></i> Ver clase
+            </a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="card-curso">
-          <div class="img-container">
-            <i class="bi bi-book"></i>
+      <!-- Clase 2 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card-clase">
+          <div class="img-icon">
+            <i class="bi bi-play-circle"></i>
           </div>
           <div class="card-body">
-            <h5>Comprensión Lectora</h5>
-            <p class="text-muted small mb-3">Clases grabadas de junio</p>
-            <a href="PON_AQUI_EL_ENLACE" class="btn btn-ver" target="_blank">Ver videos</a>
+            <h5>Clase 2</h5>
+            <p class="text-muted small mb-3">Razonamiento Lógico Matemático</p>
+            <a href="PON_AQUI_EL_ENLACE_DE_DRIVE" class="btn btn-clase" target="_blank">
+              <i class="bi bi-camera-reels me-2"></i> Ver clase
+            </a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="card-curso">
-          <div class="img-container">
-            <i class="bi bi-translate"></i>
+      <!-- Clase 3 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card-clase">
+          <div class="img-icon">
+            <i class="bi bi-play-circle"></i>
           </div>
           <div class="card-body">
-            <h5>Matemática y Lenguaje</h5>
-            <p class="text-muted small mb-3">Clases grabadas de junio</p>
-            <a href="PON_AQUI_EL_ENLACE" class="btn btn-ver" target="_blank">Ver videos</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6">
-        <div class="card-curso">
-          <div class="img-container">
-            <i class="bi bi-emoji-smile"></i>
-          </div>
-          <div class="card-body">
-            <h5>Habilidades Socioemocionales</h5>
-            <p class="text-muted small mb-3">Clases grabadas de junio</p>
-            <a href="PON_AQUI_EL_ENLACE" class="btn btn-ver" target="_blank">Ver videos</a>
+            <h5>Clase 3</h5>
+            <p class="text-muted small mb-3">Razonamiento Lógico Matemático</p>
+            <a href="PON_AQUI_EL_ENLACE_DE_DRIVE" class="btn btn-clase" target="_blank">
+              <i class="bi bi-camera-reels me-2"></i> Ver clase
+            </a>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ===================== JULIO ===================== -->
-    <div id="julio" class="section-header">
-      <div class="icono"><i class="bi bi-camera-reels"></i></div>
+    <!-- ===================== MÓDULO II ===================== -->
+    <div id="modulo2" class="modulo-header">
+      <div class="numero">II</div>
       <div>
-        <h2>Videos de Clase - JULIO</h2>
-        <small class="text-muted">Grabaciones disponibles</small>
-      </div>
-    </div>
-
-    <div class="row g-4">
-      <div class="col-md-3 col-sm-6">
-        <div class="card-curso">
-          <div class="img-container">
-            <i class="bi bi-calculator"></i>
-          </div>
-          <div class="card-body">
-            <h5>Razonamiento Lógico Matemático</h5>
-            <p class="text-muted small mb-3">Clases grabadas de julio</p>
-            <a href="PON_AQUI_EL_ENLACE" class="btn btn-ver" target="_blank">Ver videos</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6">
-        <div class="card-curso">
-          <div class="img-container">
-            <i class="bi bi-book"></i>
-          </div>
-          <div class="card-body">
-            <h5>Comprensión Lectora</h5>
-            <p class="text-muted small mb-3">Clases grabadas de julio</p>
-            <a href="PON_AQUI_EL_ENLACE" class="btn btn-ver" target="_blank">Ver videos</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6">
-        <div class="card-curso">
-          <div class="img-container">
-            <i class="bi bi-hourglass-split"></i>
-          </div>
-          <div class="card-body">
-            <h5>Historia</h5>
-            <p class="text-muted small mb-3">Clases grabadas de julio</p>
-            <a href="PON_AQUI_EL_ENLACE" class="btn btn-ver" target="_blank">Ver videos</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6">
-        <div class="card-curso">
-          <div class="img-container">
-            <i class="bi bi-emoji-smile"></i>
-          </div>
-          <div class="card-body">
-            <h5>Habilidades Socioemocionales</h5>
-            <p class="text-muted small mb-3">Clases grabadas de julio</p>
-            <a href="PON_AQUI_EL_ENLACE" class="btn btn-ver" target="_blank">Ver videos</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===================== AGOSTO ===================== -->
-    <div id="agosto" class="section-header">
-      <div class="icono"><i class="bi bi-camera-reels"></i></div>
-      <div>
-        <h2>Videos de Clase - AGOSTO</h2>
-        <small class="text-muted">Grabaciones disponibles</small>
+        <h2>Módulo II</h2>
+        <small class="text-muted">Clases grabadas de Razonamiento Matemático</small>
       </div>
     </div>
 
     <div class="row g-4">
       <div class="col-md-4 col-sm-6">
-        <div class="card-curso">
-          <div class="img-container">
-            <i class="bi bi-calculator"></i>
+        <div class="card-clase">
+          <div class="img-icon">
+            <i class="bi bi-play-circle"></i>
           </div>
           <div class="card-body">
-            <h5>Razonamiento Lógico Matemático</h5>
-            <p class="text-muted small mb-3">Clases grabadas de agosto</p>
-            <a href="PON_AQUI_EL_ENLACE" class="btn btn-ver" target="_blank">Ver videos</a>
+            <h5>Clase 1</h5>
+            <p class="text-muted small mb-3">Razonamiento Lógico Matemático</p>
+            <a href="PON_AQUI_EL_ENLACE_DE_DRIVE" class="btn btn-clase" target="_blank">
+              <i class="bi bi-camera-reels me-2"></i> Ver clase
+            </a>
           </div>
         </div>
       </div>
 
       <div class="col-md-4 col-sm-6">
-        <div class="card-curso">
-          <div class="img-container">
-            <i class="bi bi-book"></i>
+        <div class="card-clase">
+          <div class="img-icon">
+            <i class="bi bi-play-circle"></i>
           </div>
           <div class="card-body">
-            <h5>Comprensión Lectora</h5>
-            <p class="text-muted small mb-3">Clases grabadas de agosto</p>
-            <a href="PON_AQUI_EL_ENLACE" class="btn btn-ver" target="_blank">Ver videos</a>
+            <h5>Clase 2</h5>
+            <p class="text-muted small mb-3">Razonamiento Lógico Matemático</p>
+            <a href="PON_AQUI_EL_ENLACE_DE_DRIVE" class="btn btn-clase" target="_blank">
+              <i class="bi bi-camera-reels me-2"></i> Ver clase
+            </a>
           </div>
         </div>
       </div>
 
       <div class="col-md-4 col-sm-6">
-        <div class="card-curso">
-          <div class="img-container">
-            <i class="bi bi-emoji-smile"></i>
+        <div class="card-clase">
+          <div class="img-icon">
+            <i class="bi bi-play-circle"></i>
           </div>
           <div class="card-body">
-            <h5>Habilidades Socioemocionales</h5>
-            <p class="text-muted small mb-3">Clases grabadas de agosto</p>
-            <a href="PON_AQUI_EL_ENLACE" class="btn btn-ver" target="_blank">Ver videos</a>
+            <h5>Clase 3</h5>
+            <p class="text-muted small mb-3">Razonamiento Lógico Matemático</p>
+            <a href="PON_AQUI_EL_ENLACE_DE_DRIVE" class="btn btn-clase" target="_blank">
+              <i class="bi bi-camera-reels me-2"></i> Ver clase
+            </a>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ===================== MATERIAL ADICIONAL ===================== -->
-    <div id="material" class="section-header">
-      <div class="icono" style="background:#00c853;"><i class="bi bi-journal-richtext"></i></div>
+    <!-- ===================== MÓDULO III ===================== -->
+    <div id="modulo3" class="modulo-header">
+      <div class="numero">III</div>
       <div>
-        <h2>Material Adicional</h2>
-        <small class="text-muted">Recursos para practicar</small>
+        <h2>Módulo III</h2>
+        <small class="text-muted">Clases grabadas de Razonamiento Matemático</small>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4 col-sm-6">
+        <div class="card-clase">
+          <div class="img-icon">
+            <i class="bi bi-play-circle"></i>
+          </div>
+          <div class="card-body">
+            <h5>Clase 1</h5>
+            <p class="text-muted small mb-3">Razonamiento Lógico Matemático</p>
+            <a href="PON_AQUI_EL_ENLACE_DE_DRIVE" class="btn btn-clase" target="_blank">
+              <i class="bi bi-camera-reels me-2"></i> Ver clase
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="card-clase">
+          <div class="img-icon">
+            <i class="bi bi-play-circle"></i>
+          </div>
+          <div class="card-body">
+            <h5>Clase 2</h5>
+            <p class="text-muted small mb-3">Razonamiento Lógico Matemático</p>
+            <a href="PON_AQUI_EL_ENLACE_DE_DRIVE" class="btn btn-clase" target="_blank">
+              <i class="bi bi-camera-reels me-2"></i> Ver clase
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="card-clase">
+          <div class="img-icon">
+            <i class="bi bi-play-circle"></i>
+          </div>
+          <div class="card-body">
+            <h5>Clase 3</h5>
+            <p class="text-muted small mb-3">Razonamiento Lógico Matemático</p>
+            <a href="PON_AQUI_EL_ENLACE_DE_DRIVE" class="btn btn-clase" target="_blank">
+              <i class="bi bi-camera-reels me-2"></i> Ver clase
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== SOLUCIONARIO ===================== -->
+    <div class="modulo-header mt-5">
+      <div class="numero" style="background: linear-gradient(135deg, #6a1b9a, #8e24aa);">
+        <i class="bi bi-journal-check"></i>
+      </div>
+      <div>
+        <h2>Solucionario de Banco de Preguntas</h2>
+        <small class="text-muted">Documentos para descargar y practicar</small>
       </div>
     </div>
 
     <div class="row g-4">
       <div class="col-md-4">
-        <div class="card-material p-4 text-center">
-          <div class="mb-3" style="font-size: 3rem; color: #1a73e8;">
-            <i class="bi bi-file-earmark-text"></i>
+        <div class="card-documento">
+          <div class="icono-doc">
+            <i class="bi bi-file-earmark-pdf"></i>
           </div>
-          <h5 class="fw-semibold">Examen Simulacro</h5>
-          <p class="text-muted small">Razonamiento Lógico Matemático</p>
-          <a href="PON_AQUI_EL_ENLACE" class="btn btn-outline-primary mt-2" target="_blank">Descargar</a>
+          <h5 class="fw-semibold">Solucionario Módulo I</h5>
+          <p class="text-muted small mb-3">Banco de preguntas resuelto</p>
+          <a href="PON_AQUI_EL_ENLACE_DEL_PDF" class="btn btn-clase" target="_blank">
+            <i class="bi bi-download me-2"></i> Descargar
+          </a>
         </div>
       </div>
 
       <div class="col-md-4">
-        <div class="card-material p-4 text-center">
-          <div class="mb-3" style="font-size: 3rem; color: #1a73e8;">
-            <i class="bi bi-journal-check"></i>
+        <div class="card-documento">
+          <div class="icono-doc">
+            <i class="bi bi-file-earmark-pdf"></i>
           </div>
-          <h5 class="fw-semibold">Solucionario</h5>
-          <p class="text-muted small">Banco de Preguntas</p>
-          <a href="PON_AQUI_EL_ENLACE" class="btn btn-outline-primary mt-2" target="_blank">Descargar</a>
+          <h5 class="fw-semibold">Solucionario Módulo II</h5>
+          <p class="text-muted small mb-3">Banco de preguntas resuelto</p>
+          <a href="PON_AQUI_EL_ENLACE_DEL_PDF" class="btn btn-clase" target="_blank">
+            <i class="bi bi-download me-2"></i> Descargar
+          </a>
         </div>
       </div>
 
       <div class="col-md-4">
-        <div class="card-material p-4 text-center">
-          <div class="mb-3" style="font-size: 3rem; color: #1a73e8;">
-            <i class="bi bi-bookshelf"></i>
+        <div class="card-documento">
+          <div class="icono-doc">
+            <i class="bi bi-file-earmark-pdf"></i>
           </div>
-          <h5 class="fw-semibold">Biblioteca ESFM</h5>
-          <p class="text-muted small">Material de apoyo completo</p>
-          <a href="PON_AQUI_EL_ENLACE" class="btn btn-outline-primary mt-2" target="_blank">Ingresar</a>
+          <h5 class="fw-semibold">Solucionario Módulo III</h5>
+          <p class="text-muted small mb-3">Banco de preguntas resuelto</p>
+          <a href="PON_AQUI_EL_ENLACE_DEL_PDF" class="btn btn-clase" target="_blank">
+            <i class="bi bi-download me-2"></i> Descargar
+          </a>
         </div>
       </div>
     </div>
 
   </div>
 
-  <!-- Botón WhatsApp -->
-  <a href="https://wa.me/59177539933" class="whatsapp-float" target="_blank" title="Escríbenos">
+  <!-- Botón WhatsApp flotante -->
+  <a href="https://wa.me/59177539933" class="whatsapp-float" target="_blank" title="Escríbenos por WhatsApp">
     <i class="bi bi-whatsapp"></i>
   </a>
 
   <!-- Footer -->
   <footer class="text-center">
     <div class="container">
-      <h5 class="fw-bold mb-2">Curso Virtual ESFM</h5>
-      <p class="mb-1 opacity-75">Preparación Policiales • Militares • ESFM • UAS</p>
+      <h5 class="fw-bold mb-2">DYNAMICS</h5>
+      <p class="mb-1 opacity-75">Clases de Razonamiento Matemático</p>
       <p class="small opacity-50 mb-0">© 2025 - Todos los derechos reservados</p>
     </div>
   </footer>
