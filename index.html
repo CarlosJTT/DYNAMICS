@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso Virtual ESFM - AGOSTO</title>
+  
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Iconos de Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <style>
+    :root {
+      --color-principal: #0d6efd;
+      --color-whatsapp: #25D366;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    /* ===== BANNER PRINCIPAL ===== */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+                  url('https://www.google.com/search?sca_esv=4c5de4241442eb86&sxsrf=APpeQnvSKGZCtxiez3g8wS78AqP_pDj8bA:1790260383744&udm=2&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832VTJOOCxW_fyN-Q_ezyf8gIHbHEqXWbyThyPdUCKqTmZIfU6wMvYOm0TvBj37Tgl7jVkNGYwdndJz-4zZcyIdhb3JZsmck-BE3z1c3T0oeyl7wgl2xTQafWEuryWOfHpips8gNdavbRNmNSoe40IDtmOcCyS&q=ESFEM&sa=X&ved=2ahUKEwiuxunRt4eXAxUwlZUCHVqFBDoQtKgLegQIHBAB&biw=1707&bih=758&dpr=0.8#sv=CAMSURoyKhBlLUVIemNIZlo5WEZwblJNMg5FSHpjSGZaOVhGcG5STToOZlM2ZlNrZGgwWmgxbk0gBCoXCgFzEhBlLUVIemNIZlo5WEZwblJNGAEwARgHIIHRsMIGSggQARgBIAEoAQ') center/cover no-repeat;
+      min-height: 480px;
+      color: white;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .hero .subtitulo {
+      font-size: 1.4rem;
+      opacity: 0.95;
+    }
+
+    /* ===== TÍTULOS DE SECCIÓN ===== */
+    .section-title {
+      background: linear-gradient(90deg, #e3f2fd, #bbdefb);
+      padding: 18px 0;
+      margin: 50px 0 35px;
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #0d47a1;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    /* ===== TARJETAS ===== */
+    .card {
+      border: none;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .card-img-top {
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .card-title {
+      font-weight: 600;
+      color: #1565c0;
+      font-size: 1.1rem;
+    }
+
+    /* ===== BOTÓN WHATSAPP FLOTANTE ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: var(--color-whatsapp);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      transition: all 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      color: white;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #0d47a1;
+      color: white;
+      padding: 30px 0;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== BANNER PRINCIPAL ===================== -->
+  <section class="hero text-center">
+    <div class="container">
+      <h1 class="mb-3">Preparación Virtual</h1>
+      <p class="subtitulo mb-4">Policiales – Militares – ESFM – UAS</p>
+      <a href="https://wa.me/59177539933" class="btn btn-success btn-lg px-5 py-3 fw-bold" target="_blank">
+        <i class="bi bi-whatsapp me-2"></i> Contáctanos
+      </a>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- ===================== JUNIO ===================== -->
+    <h2 class="section-title text-center">Videos de Grabaciones de Clase JUNIO</h2>
+    <div class="row g-4">
+      
+      <!-- Tarjeta 1 -->
+      <div class="col-md-3 col-sm-6">
+        <div class="card h-100">
+          <img src="https://www.google.com/search?sca_esv=4c5de4241442eb86&sxsrf=APpeQnvSKGZCtxiez3g8wS78AqP_pDj8bA:1790260383744&udm=2&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832VTJOOCxW_fyN-Q_ezyf8gIHbHEqXWbyThyPdUCKqTmZIfU6wMvYOm0TvBj37Tgl7jVkNGYwdndJz-4zZcyIdhb3JZsmck-BE3z1c3T0oeyl7wgl2xTQafWEuryWOfHpips8gNdavbRNmNSoe40IDtmOcCyS&q=ESFEM&sa=X&ved=2ahUKEwiuxunRt4eXAxUwlZUCHVqFBDoQtKgLegQIHBAB&biw=1707&bih=758&dpr=0.8#sv=CAMSURoyKhBlLUVIemNIZlo5WEZwblJNMg5FSHpjSGZaOVhGcG5STToOZlM2ZlNrZGgwWmgxbk0gBCoXCgFzEhBlLUVIemNIZlo5WEZwblJNGAEwARgHIIHRsMIGSggQARgBIAEoAQ" class="card-img-top" alt="Razonamiento Lógico">
+          <div class="card-body text-center">
+            <h5 class="card-title">Razonamiento Lógico Matemático</h5>
+            <a href="https://www.youtube.com/watch?v=XUsWoD8EoA8&list=RDXUsWoD8EoA8&start_radio=1" class="btn btn-primary mt-2" target="_blank">Ver videos</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 2 -->
+      <div class="col-md-3 col-sm-6">
+        <div class="card h-100">
+          <img src="https://www.google.com/search?sca_esv=4c5de4241442eb86&sxsrf=APpeQnvSKGZCtxiez3g8wS78AqP_pDj8bA:1790260383744&udm=2&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832VTJOOCxW_fyN-Q_ezyf8gIHbHEqXWbyThyPdUCKqTmZIfU6wMvYOm0TvBj37Tgl7jVkNGYwdndJz-4zZcyIdhb3JZsmck-BE3z1c3T0oeyl7wgl2xTQafWEuryWOfHpips8gNdavbRNmNSoe40IDtmOcCyS&q=ESFEM&sa=X&ved=2ahUKEwiuxunRt4eXAxUwlZUCHVqFBDoQtKgLegQIHBAB&biw=1707&bih=758&dpr=0.8#sv=CAMSURoyKhBlLUVIemNIZlo5WEZwblJNMg5FSHpjSGZaOVhGcG5STToOZlM2ZlNrZGgwWmgxbk0gBCoXCgFzEhBlLUVIemNIZlo5WEZwblJNGAEwARgHIIHRsMIGSggQARgBIAEoAQ" class="card-img-top" alt="Comprensión Lectora">
+          <div class="card-body text-center">
+            <h5 class="card-title">Comprensión Lectora</h5>
+            <a href="PON_AQUI_EL_ENLACE_DEL_VIDEO" class="btn btn-primary mt-2" target="_blank">Ver videos</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 3 -->
+      <div class="col-md-3 col-sm-6">
+        <div class="card h-100">
+          <img src="https://www.google.com/search?sca_esv=4c5de4241442eb86&sxsrf=APpeQnvSKGZCtxiez3g8wS78AqP_pDj8bA:1790260383744&udm=2&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832VTJOOCxW_fyN-Q_ezyf8gIHbHEqXWbyThyPdUCKqTmZIfU6wMvYOm0TvBj37Tgl7jVkNGYwdndJz-4zZcyIdhb3JZsmck-BE3z1c3T0oeyl7wgl2xTQafWEuryWOfHpips8gNdavbRNmNSoe40IDtmOcCyS&q=ESFEM&sa=X&ved=2ahUKEwiuxunRt4eXAxUwlZUCHVqFBDoQtKgLegQIHBAB&biw=1707&bih=758&dpr=0.8#sv=CAMSURoyKhBlLUVIemNIZlo5WEZwblJNMg5FSHpjSGZaOVhGcG5STToOZlM2ZlNrZGgwWmgxbk0gBCoXCgFzEhBlLUVIemNIZlo5WEZwblJNGAEwARgHIIHRsMIGSggQARgBIAEoAQ" class="card-img-top" alt="Matemática y Lenguaje">
+          <div class="card-body text-center">
+            <h5 class="card-title">Matemática y Lenguaje</h5>
+            <a href="PON_AQUI_EL_ENLACE_DEL_VIDEO" class="btn btn-primary mt-2" target="_blank">Ver videos</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 4 -->
+      <div class="col-md-3 col-sm-6">
+        <div class="card h-100">
+          <img src="https://www.google.com/search?sca_esv=4c5de4241442eb86&sxsrf=APpeQnvSKGZCtxiez3g8wS78AqP_pDj8bA:1790260383744&udm=2&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832VTJOOCxW_fyN-Q_ezyf8gIHbHEqXWbyThyPdUCKqTmZIfU6wMvYOm0TvBj37Tgl7jVkNGYwdndJz-4zZcyIdhb3JZsmck-BE3z1c3T0oeyl7wgl2xTQafWEuryWOfHpips8gNdavbRNmNSoe40IDtmOcCyS&q=ESFEM&sa=X&ved=2ahUKEwiuxunRt4eXAxUwlZUCHVqFBDoQtKgLegQIHBAB&biw=1707&bih=758&dpr=0.8#sv=CAMSURoyKhBlLUVIemNIZlo5WEZwblJNMg5FSHpjSGZaOVhGcG5STToOZlM2ZlNrZGgwWmgxbk0gBCoXCgFzEhBlLUVIemNIZlo5WEZwblJNGAEwARgHIIHRsMIGSggQARgBIAEoAQ" class="card-img-top" alt="Habilidades Socioemocionales">
+          <div class="card-body text-center">
+            <h5 class="card-title">Habilidades Socioemocionales</h5>
+            <a href="PON_AQUI_EL_ENLACE_DEL_VIDEO" class="btn btn-primary mt-2" target="_blank">Ver videos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== JULIO ===================== -->
+    <h2 class="section-title text-center">Videos de Grabaciones de Clase JULIO</h2>
+    <div class="row g-4">
+      
+      <div class="col-md-3 col-sm-6">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=500" class="card-img-top" alt="Razonamiento">
+          <div class="card-body text-center">
+            <h5 class="card-title">Razonamiento Lógico Matemático</h5>
+            <a href="PON_AQUI_EL_ENLACE_DEL_VIDEO" class="btn btn-primary mt-2" target="_blank">Ver videos</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1456513080080-7e4b6c2b1d1c?w=500" class="card-img-top" alt="Comprensión">
+          <div class="card-body text-center">
+            <h5 class="card-title">Comprensión Lectora</h5>
+            <a href="PON_AQUI_EL_ENLACE_DEL_VIDEO" class="btn btn-primary mt-2" target="_blank">Ver videos</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1461360228754-6e81c08cd0a0?w=500" class="card-img-top" alt="Historia">
+          <div class="card-body text-center">
+            <h5 class="card-title">Historia</h5>
+            <a href="PON_AQUI_EL_ENLACE_DEL_VIDEO" class="btn btn-primary mt-2" target="_blank">Ver videos</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=500" class="card-img-top" alt="Socioemocionales">
+          <div class="card-body text-center">
+            <h5 class="card-title">Habilidades Socioemocionales</h5>
+            <a href="PON_AQUI_EL_ENLACE_DEL_VIDEO" class="btn btn-primary mt-2" target="_blank">Ver videos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== AGOSTO ===================== -->
+    <h2 class="section-title text-center">Videos de Grabaciones de Clase AGOSTO</h2>
+    <div class="row g-4">
+      
+      <div class="col-md-4 col-sm-6">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=500" class="card-img-top" alt="Razonamiento">
+          <div class="card-body text-center">
+            <h5 class="card-title">Razonamiento Lógico Matemático</h5>
+            <a href="PON_AQUI_EL_ENLACE_DEL_VIDEO" class="btn btn-primary mt-2" target="_blank">Ver videos</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1456513080080-7e4b6c2b1d1c?w=500" class="card-img-top" alt="Comprensión">
+          <div class="card-body text-center">
+            <h5 class="card-title">Comprensión Lectora</h5>
+            <a href="PON_AQUI_EL_ENLACE_DEL_VIDEO" class="btn btn-primary mt-2" target="_blank">Ver videos</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=500" class="card-img-top" alt="Socioemocionales">
+          <div class="card-body text-center">
+            <h5 class="card-title">Habilidades Socioemocionales</h5>
+            <a href="PON_AQUI_EL_ENLACE_DEL_VIDEO" class="btn btn-primary mt-2" target="_blank">Ver videos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== MATERIAL ADICIONAL ===================== -->
+    <h2 class="section-title text-center">Material Adicional</h2>
+    <div class="row g-4 mb-5">
+      
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500" class="card-img-top" alt="Examen Simulacro">
+          <div class="card-body text-center">
+            <h5 class="card-title">Examen Simulacro<br>Raz. Lógico Matemático</h5>
+            <a href="PON_AQUI_EL_ENLACE" class="btn btn-outline-primary mt-2" target="_blank">Descargar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1456513080080-7e4b6c2b1d1c?w=500" class="card-img-top" alt="Solucionario">
+          <div class="card-body text-center">
+            <h5 class="card-title">Solucionario del<br>Banco de Preguntas</h5>
+            <a href="PON_AQUI_EL_ENLACE" class="btn btn-outline-primary mt-2" target="_blank">Descargar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=500" class="card-img-top" alt="Biblioteca">
+          <div class="card-body text-center">
+            <h5 class="card-title">Biblioteca ESFM</h5>
+            <a href="PON_AQUI_EL_ENLACE" class="btn btn-outline-primary mt-2" target="_blank">Ingresar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/59177539933" class="whatsapp-float" target="_blank" title="Contáctanos por WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <div class="container">
+      <p class="mb-1 fw-bold">Curso Virtual ESFM - AGOSTO</p>
+      <p class="mb-0 small">Preparación Policiales • Militares • ESFM • UAS</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
